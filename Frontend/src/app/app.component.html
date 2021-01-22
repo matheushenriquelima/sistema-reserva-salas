@@ -15,9 +15,9 @@
         }">
         <app-topbar></app-topbar>
 
-        <div class="layout-menu" [ngClass]="{ 'layout-menu-dark': darkMenu }" (click)="onMenuClick($event)">
-            <p-scrollPanel #scrollPanel [style]="{ height: '100%' }">
-                <app-menu></app-menu>
+        <div class="layout-menu" (click)="onMenuClick($event)">
+            <p-scrollPanel>
+                <app-administracao></app-administracao>
             </p-scrollPanel>
         </div>
 
