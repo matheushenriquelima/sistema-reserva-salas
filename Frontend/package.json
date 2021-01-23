@@ -17,7 +17,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^9.1.0",
-    "@angular/cdk": "9.1.0",
+    "@angular/cdk": "^9.1.0",
     "@angular/common": "9.1.0",
     "@angular/compiler": "9.1.0",
     "@angular/core": "9.1.0",
@@ -30,6 +30,7 @@
     "@nuvem/angular-base": "~9.1.2",
     "@nuvem/primeng-components": "~9.1.2",
     "chart.js": "2.7.1",
+    "material-icons": "^0.5.2",
     "ng-block-ui": "^2.1.8",
     "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",

@@ -21,6 +21,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/quill/dist/quill.snow.css",
               "node_modules/@nuvem/angular-base/src/lib/accessibility/accessibility.scss",
@@ -83,6 +84,7 @@
               "node_modules/quill/dist/quill.js"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/quill/dist/quill.snow.css",
               "styles.css"
@@ -126,6 +128,123 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        }
+      }
+    },
+    "administracao": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "srs/administracao",
+      "sourceRoot": "srs/administracao/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/administracao",
+            "index": "srs/administracao/src/index.html",
+            "main": "srs/administracao/src/main.ts",
+            "polyfills": "srs/administracao/src/polyfills.ts",
+            "tsConfig": "srs/administracao/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "srs/administracao/src/favicon.ico",
+              "srs/administracao/src/assets"
+            ],
+            "styles": [
+              "srs/administracao/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "srs/administracao/src/environments/environment.ts",
+                  "with": "srs/administracao/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "administracao:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "administracao:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "administracao:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "srs/administracao/src/test.ts",
+            "polyfills": "srs/administracao/src/polyfills.ts",
+            "tsConfig": "srs/administracao/tsconfig.spec.json",
+            "karmaConfig": "srs/administracao/karma.conf.js",
+            "assets": [
+              "srs/administracao/src/favicon.ico",
+              "srs/administracao/src/assets"
+            ],
+            "styles": [
+              "srs/administracao/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "srs/administracao/tsconfig.app.json",
+              "srs/administracao/tsconfig.spec.json",
+              "srs/administracao/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "srs/administracao/e2e/protractor.conf.js",
+            "devServerTarget": "administracao:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "administracao:serve:production"
+            }
           }
         }
       }

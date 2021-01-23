@@ -7,6 +7,8 @@ import { ScrollPanel } from 'primeng';
     templateUrl: './app.component.html'
 })
 export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
+    
+    
 
     layoutCompact = true;
 
@@ -50,7 +52,31 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
         this.zone.runOutsideAngular(() => { this.bindRipple(); });
 
         this.menuService.itens = [
-            { label: 'Dashboard', icon: 'dashboard', routerLink: ['/'] }
+            {
+                label: 'Home',
+                icon: 'home',
+                routerLink: '/'
+            },
+            {
+                label: 'Cliente',
+                icon: 'account_box',
+                routerLink: '/clientes'
+            },
+            {
+                label: 'Equipamento',
+                icon: 'computer',
+                routerLink: '/equipamentos'
+            },
+            {
+                label: 'Sala',
+                icon: 'meeting_room',
+                routerLink: '/salas'
+            },
+            {
+                label: 'Reserva',
+                icon: 'event_available',
+                routerLink: '/reservas'
+            }
         ];
 
     }

@@ -1,0 +1,27 @@
+<div>
+  <h2 class="title">Clientes</h2>
+  <hr >
+</div>
+<p-card>
+    <p-table [columns]="colunas" [value]="clientes"  [rows]="10" styleClass="ui-table-customers"
+    [autoLayout]="true" [paginator]="true" [rowHover]="true"
+    >
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of colunas">
+                    {{col.cabecalho}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-coluna>
+            <tr>
+                <td *ngFor="let col of colunas">
+                {{rowData[col.parametro]}}
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            Existem {{clientes?.length}} clientes
+        </ng-template>
+    </p-table>
+</p-card>
