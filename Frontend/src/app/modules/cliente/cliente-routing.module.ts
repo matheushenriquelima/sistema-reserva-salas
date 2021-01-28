@@ -5,7 +5,7 @@ import { ClienteComponent } from "./consulta-cliente/cliente.component";
 const routes: Routes = [{path: '', component: ClienteComponent}];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class ClienteRoutingModule {}
