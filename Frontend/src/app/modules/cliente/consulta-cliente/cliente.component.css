@@ -1,5 +1,5 @@
 .title {
-  color: rgb(67, 67, 207);
+  color: rgb(14, 165, 165);
   font-family: sans-serif;
   font-weight: 700;
 }
@@ -8,7 +8,23 @@ hr {
   display: block;
   height: 2px;
   border: 0;
-  border-top: 1px solid rgb(39, 42, 223);
+  border-top: 2px solid rgb(14, 165, 165);
   margin: 1em 0;
   padding: 0;
+}
+
+:host /deep/ .ui-button-secondary {
+  font-size: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-left: 5px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+:host /deep/ .ui-button {
+  background-color:rgb(14, 165, 165);
+}
+
+:host /deep/ .ui-button-text {
+  text-align: center;
 }

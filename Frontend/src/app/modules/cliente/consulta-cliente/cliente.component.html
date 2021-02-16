@@ -1,27 +1,49 @@
 <div>
   <h2 class="title">Clientes</h2>
-  <hr >
+  <hr />
 </div>
 <p-card>
-    <p-table [columns]="colunas" [value]="clientes"  [rows]="10" styleClass="ui-table-customers"
-    [autoLayout]="true" [paginator]="true" [rowHover]="true"
-    >
-        <ng-template pTemplate="header" let-columns>
-            <tr>
-                <th *ngFor="let col of colunas">
-                    {{col.cabecalho}}
-                </th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-coluna>
-            <tr>
-                <td *ngFor="let col of colunas">
-                {{rowData[col.parametro]}}
-                </td>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="summary">
-            Existem {{clientes?.length}} clientes
-        </ng-template>
-    </p-table>
+  <h3 class="title">Consultar Cliente</h3>
+  <div class="p-grid">
+    <div class="p-col-12 p-justify-center p-col-align-center">
+      <p-button label="Novo Cliente" (onClick)="novoCliente($event)" icon="pi pi-plus-circle "></p-button>
+    </div>
+  </div>
+  <p-table
+    [columns]="colunas"
+    [value]="clientes"
+    [rows]="10"
+    styleClass="ui-table-customers"
+    [autoLayout]="true"
+    [paginator]="true"
+    [rowHover]="true"
+    [rowsPerPageOptions]="[10,25,50]"
+  > 
+
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of colunas" [pSortableColumn]="col.parametro">
+          {{ col.cabecalho }}
+          <p-sortIcon field="nome"></p-sortIcon>
+        </th>
+        <th>
+          Ações
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-coluna>
+      <tr>
+        <td *ngFor="let col of colunas">
+          {{ rowData[col.parametro] }}
+        </td>
+        <td>
+          <button pButton type="button" class="ui-button-secondary" icon="pi pi-pencil"></button>
+          <button pButton type="button" class="ui-button-secondary" icon="pi pi-trash"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      Existem {{ clientes?.length }} clientes
+    </ng-template>
+  </p-table>
 </p-card>

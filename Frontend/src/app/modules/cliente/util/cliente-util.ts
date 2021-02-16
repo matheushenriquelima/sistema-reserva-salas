@@ -30,11 +30,7 @@ export class ClienteUtil {
             cabecalho: 'CPF',
             parametro: 'cpf',
             parametroOrdenacao: 'cliente.cpf'
-        },
-        {
-            cabecalho: 'Ações',
-            parametro: 'acoes'
-        },
+        }
     ];
 
     static MENSAGEM_PESQUISA_SEM_RETORNO = 'Nenhum registro encontrado para a pesquisa informada.';
