@@ -6,6 +6,7 @@
 export const environment = {
     production: false,
     apiUrl: '/api',
+    apiSRS: '"http://localhost:8080/api',
     auth: {
         baseUrl: '',
         loginUrl: '/api/sso/login',

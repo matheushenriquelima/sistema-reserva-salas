@@ -1,6 +1,7 @@
 export const environment = {
     production: true,
     apiUrl: '/api',
+    apiSRS: '"http://localhost:8080/api',
     auth: {
         baseUrl: '',
         authUrl: '/login/cas',

@@ -1,24 +1,17 @@
-<div>
-  <h2 class="title">Clientes</h2>
+<div class="titulo">
+  <h2>Clientes</h2>
   <hr />
 </div>
+
 <p-card>
-  <h3 class="title">Consultar Cliente</h3>
+  <h3>Consultar Cliente</h3>
   <div class="p-grid">
     <div class="p-col-12 p-justify-center p-col-align-center">
-      <p-button label="Novo Cliente" (onClick)="novoCliente($event)" icon="pi pi-plus-circle "></p-button>
+      <p-button label="Novo Cliente" class="novo" (onClick)="novoCliente()" icon="pi pi-plus-circle "></p-button>
     </div>
   </div>
-  <p-table
-    [columns]="colunas"
-    [value]="clientes"
-    [rows]="10"
-    styleClass="ui-table-customers"
-    [autoLayout]="true"
-    [paginator]="true"
-    [rowHover]="true"
-    [rowsPerPageOptions]="[10,25,50]"
-  > 
+  <p-table [columns]="colunas" [value]="clientes" [rows]="10" styleClass="ui-table-customers" [autoLayout]="true"
+    [paginator]="true" [rowHover]="true" [rowsPerPageOptions]="[10,25,50]">
 
     <ng-template pTemplate="header" let-columns>
       <tr>
@@ -31,13 +24,14 @@
         </th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-rowData let-coluna>
+    <ng-template pTemplate="body" let-cliente let-coluna>
       <tr>
         <td *ngFor="let col of colunas">
-          {{ rowData[col.parametro] }}
+          {{ cliente[col.parametro] }}
         </td>
         <td>
-          <button pButton type="button" class="ui-button-secondary" icon="pi pi-pencil"></button>
+          <button pButton type="button" class="ui-button-secondary" icon="pi pi-pencil"
+            (onclick)="editarCliente($event)"></button>
           <button pButton type="button" class="ui-button-secondary" icon="pi pi-trash"></button>
         </td>
       </tr>

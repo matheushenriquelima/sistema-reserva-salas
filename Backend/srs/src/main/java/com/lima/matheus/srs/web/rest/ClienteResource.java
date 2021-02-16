@@ -21,7 +21,7 @@ public class ClienteResource {
     @PostMapping
     public ResponseEntity<ClienteDTO> salvarCliente(@Validated @RequestBody ClienteDTO clienteDTO) throws URISyntaxException
     {
-        return ResponseEntity.created(new URI("/api/cliente")).body(service.salvarCliente(clienteDTO));
+        return ResponseEntity.created(new URI("/api/clientes")).body(service.salvarCliente(clienteDTO));
     }
 
 }

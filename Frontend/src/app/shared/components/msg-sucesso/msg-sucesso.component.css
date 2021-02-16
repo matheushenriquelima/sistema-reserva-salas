@@ -1,0 +1,35 @@
+.container {
+}
+
+.linhaFechar {
+    width: 100%;
+    text-align: right;
+}
+
+.icone-fechar {
+    cursor: pointer;
+}
+
+.md-icon {
+    font-size: 8em;
+    color: #1FC86A;
+    margin-top: 16px;
+}
+
+.content {
+    text-align: center;
+}
+
+.mensagem {
+    color: #1FC86A;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.legenda {
+    line-height: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}

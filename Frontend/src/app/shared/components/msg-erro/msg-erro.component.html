@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="linhaFechar">
+        <span class="icone-mensagem">
+            <i class="fas fa-times-circle"></i>
+         </span>
+        <div class="header">
+            Erro
+        </div>
+        <div class="header-icone">
+            <i (click)="closeModal(true)" class="fas fa-times icone-fechar"></i>
+        </div>
+    </div>
+    <div class="content">
+        <p class="legenda">
+            {{config?.data?.mensagem}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="titulo">
+    <h2>Cadastrar Cliente</h2>
+    <hr />
+</div>
+
+<form [formGroup]="form" (submit)="salvar()">
+
+    <p-card>
+        <div class="p-grid">
+            <div class="p-col-6">
+                <label for="nome" class="label-sts">Nome: </label>
+                <span class="campo-obrigatorio">*</span>
+                <span class="material-icons info-icon" pTooltip="Informe o nome do Cliente."
+                    tooltipPosition="top">info</span>
+                <div class="ui-float-label margin-input-sts">
+                    <input id="nome" #nomeCliente name="Nome" formControlName="nome" [(ngModel)]="cliente.nome"
+                      placeholder="Nome"  size="10" maxlength="200" required="true" type="text" pInputText>
+                    <small class="p-invalid">{{mapearMensagemErroCampo(nomeCliente.name, form.get('nome'))}}</small>
+                </div>
+            </div>
+
+            <div class="p-col-6">
+                <label for="endereco" class="label-sts">Endereço: </label>
+                <span class="campo-obrigatorio">*</span>
+                <span class="material-icons info-icon" pTooltip="Informe o endereço do Cliente."
+                    tooltipPosition="top">info</span>
+                <div class="ui-float-label margin-input-sts">
+                    <input id="endereco" #endereco name="Endereço" formControlName="endereco"
+                    placeholder="Endereço"  [(ngModel)]="cliente.endereco" size="10" maxlength="200" required="true" type="text" pInputText>
+                    <small class="p-invalid">{{mapearMensagemErroCampo(endereco.name, form.get('endereco'))}}</small>
+                </div>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                <label for="dataNasc" class="label-sts">Data de Nascimento: </label>
+                <span class="campo-obrigatorio">*</span>
+                <span class="material-icons info-icon" pTooltip="Informe a data de nascimento do Cliente."
+                    tooltipPosition="top">info</span>
+                <div class="ui-float-label margin-input-sts">
+                    <p-calendar [(ngModel)]="cliente.dataNasc" id="data" #data name="Data de Nascimento"
+                    placeholder="Data de Nascimento" formControlName="dataNasc" required="true"></p-calendar>
+                    <div>
+                        <small class="p-invalid">{{mapearMensagemErroCampo(data.name, form.get('dataNasc'))}}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-col-3"></div>
+            <div class="p-col-3">
+                <label for="telefone" class="label-sts">Telefone: </label>
+                <span class="campo-obrigatorio">*</span>
+                <span class="material-icons info-icon" pTooltip="Informe o telefone do Cliente."
+                    tooltipPosition="top">info</span>
+                <div class="ui-float-label margin-input-sts">
+                    <p-inputMask id="telefone" #telefoneCliente name="Telefone" formControlName="telefone"
+                    placeholder="Telefone" [(ngModel)]="cliente.telefone" size="10" maxlength="14" required="true" mask="(99)99999-9999">
+                    </p-inputMask>
+                    <small class="p-invalid">{{mapearMensagemErroCampo(telefoneCliente.name,
+                        form.get('telefone'))}}</small>
+                </div>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                <label for="rg" class="label-sts">RG: </label>
+                <span class="campo-obrigatorio">*</span>
+                <span class="material-icons info-icon" pTooltip="Informe o RG do Cliente."
+                    tooltipPosition="top">info</span>
+                <div class="ui-float-label margin-input-sts">
+                    <p-inputMask id="rg" #rg name="RG" formControlName="rg" [(ngModel)]="cliente.rg" required="true"
+                    placeholder="RG"  mask="9.999.999">
+                    </p-inputMask>
+                    <small class="p-invalid">{{mapearMensagemErroCampo(rg.name, form.get('rg'))}}</small>
+                </div>
+            </div>
+            <div class="p-col-3">
+                <label for="cpf" class="label-sts">CPF: </label>
+                <span class="campo-obrigatorio">*</span>
+                <span class="material-icons info-icon" pTooltip="Informe o CPF do Cliente."
+                    tooltipPosition="top">info</span>
+                <div class="ui-float-label margin-input-sts">
+                    <p-inputMask id="cpf" #cpfCliente name="CPF" formControlName="cpf" [(ngModel)]="cliente.cpf" required="true"
+                    placeholder="CPF"  mask="999.999.999-99">
+                    </p-inputMask>
+                    <small class="p-invalid">{{mapearMensagemErroCampo(cpfCliente.name, form.get('cpf'))}}</small>
+                </div>
+            </div>
+            <div class="p-col-6">
+                <label for="email" class="label-sts">Email: </label>
+                <span class="campo-obrigatorio">*</span>
+                <span class="material-icons info-icon" pTooltip="Informe o email do Cliente."
+                    tooltipPosition="top">info</span>
+                <div class="ui-float-label margin-input-sts">
+                    <input id="email" formControlName="email" placeholder="E-mail" [(ngModel)]="cliente.email"
+                        maxlength="200" required="true" #email name="E-mail" type="email" pInputText>
+                    <small class="p-error">{{mapearMensagemErroCampo(email.name, form.get('email'))}}</small>
+                </div>
+            </div>
+        </div>
+
+    </p-card>
+
+    <div class="row-buttons">
+        <div class="button-left">
+            <button pButton type="button" (click)="cancelar()" label="Cancelar"
+                class="ui-button-rounded ui-button-secondary button-cancelar"></button>
+        </div>
+        <div class="button-right">
+            <button pButton type="submit" label="Salvar"
+                class="ui-button-rounded ui-button-success button-success"></button>
+        </div>
+    </div>
+
+</form>

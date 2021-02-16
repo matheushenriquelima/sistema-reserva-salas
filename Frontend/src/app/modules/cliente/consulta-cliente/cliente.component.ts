@@ -1,6 +1,7 @@
 import { ClienteUtil } from './../util/cliente-util';
 import { Cliente } from './../../../domain/Cliente';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente',
@@ -14,7 +15,7 @@ export class ClienteComponent implements OnInit {
   clienteOptions: Cliente[] = [];
   clienteFilter = new Cliente();
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
     this.inicializarClienteMock();    
@@ -22,7 +23,7 @@ export class ClienteComponent implements OnInit {
 
   inicializarClienteMock():void {
     const cliente: Cliente = {
-      id: null,
+      id: 1,
       nome: 'Matheus',
       endereco: 'rua string',
       dataNasc: new Date,
@@ -32,7 +33,7 @@ export class ClienteComponent implements OnInit {
       email: 'email@email'
     }
     const cliente2: Cliente = {
-      id: null,
+      id: 2,
       nome: 'Ana',
       endereco: 'rua sol',
       dataNasc: new Date,
@@ -46,11 +47,14 @@ export class ClienteComponent implements OnInit {
   }
 
   validarExcluir(id:number){
-    return null;
+    //TODO realizar metodo excluir
   }
 
   novoCliente(){
-    
+    this.router.navigate([`clientes/cadastrar`]);
   }
 
+  editarCliente(id:number){
+    this.router.navigate([`clientes/editar/`,id]);
+  }
 }

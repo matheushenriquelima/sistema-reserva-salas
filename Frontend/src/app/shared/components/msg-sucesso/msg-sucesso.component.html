@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="linhaFechar">
+        <i (click)="closeModal(true)" class="fas fa-times icone-fechar"></i>
+    </div>
+    <div class="content">
+        <span class="material-icons md-icon"> check_circle</span>
+        <div class="mensagem">
+            {{config?.data?.mensagem}}
+        </div>
+        <p class="legenda">
+            {{config?.data?.legenda}}
+        </p>
+    </div>
+
+</div>

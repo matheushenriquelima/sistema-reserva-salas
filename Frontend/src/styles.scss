@@ -2,3 +2,153 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h3 {
+    color: #305fac;
+    font-weight: bold;
+}
+
+label.label-sts {
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: sans-serif;
+    min-height: 18px;
+    
+}
+
+.campo-obrigatorio {
+    color: red;
+    margin-right: 20px;
+}
+
+.titulo h2 {
+    color: #5180ce;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.titulo hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid #5180ce;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, body .ui-inputtext, p-dropdown, body .ui-multiselect, p-multiselect {
+    width: 100%;
+    border: 1px solid #888888;
+    border-radius: 6px;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 48px;
+    line-height: 48px;
+}
+
+body .ui-inputtext.ng-dirty.ng-invalid,  body .ui-inputtext.ng-touched.ng-invalid, 
+p-dropdown.ng-dirty.ng-invalid, p-dropdown.ng-touched.ng-invalid, 
+body p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext, body p-autocomplete.ng-touched.ng-invalid > .ui-autocomplete > .ui-inputtext, 
+body p-calendar.ng-dirty.ng-invalid > .ui-calendar > .ui-inputtext, 
+body p-chips.ng-dirty.ng-invalid > .ui-inputtext, 
+body p-inputmask.ng-dirty.ng-invalid > .ui-inputtext, 
+body p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box, 
+body p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box, 
+body p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch, 
+body p-listbox.ng-dirty.ng-invalid .ui-inputtext, 
+body p-multiselect.ng-dirty.ng-invalid > .ui-multiselect, 
+body p-spinner.ng-dirty.ng-invalid > .ui-inputtext, 
+body p-selectbutton.ng-dirty.ng-invalid .ui-button, 
+body p-togglebutton.ng-dirty.ng-invalid .ui-button {
+    border: 1px solid #e60000;
+}
+
+p-inputMask body .ui-inputtext, .ui-dropdown, p-multiselect body .ui-multiselect, .ui-multiselect {
+    height: 47px;
+    line-height: 47px;
+    border: none !important;
+    background: none !important;
+    background-image: none !important;
+    background-size: none !important;
+}
+
+body .ui-inputtext {
+    background: none !important;
+    background-image: none !important;
+    background-size: none !important;
+    height: 40px;
+}
+
+input:focus, p-inputMask:focus, .ui-inputtext:focus, body .ui-inputtext:focus {
+    border: 2px solid #007bff;
+}
+
+.margin-input-sts {
+    margin-top: .5rem;
+    margin-bottom: 10px;
+}
+
+body .ui-multiselect-panel.ui-widget .ui-multiselect-header {
+
+    &  .ui-chkbox .ui-chkbox-box {
+        border-color: #757575;
+    }
+
+    & .ui-multiselect-filter-container .pi {
+        top: 12px;
+        left: 5px;
+        color: #212121;
+    }
+
+    &  .ui-multiselect-close {
+        position: absolute;
+        right: 1em;
+        top: 1.5em;
+        height: 1.5em;
+        width: 1.5em;
+
+        & span {
+            color: #212121;
+        }
+
+        & span:hover {
+            color: #fff;
+            background-color: #bdbdbd;
+            border-radius: 50%;
+        }
+    }
+
+    & .ui-multiselect-filter-container .ui-inputtext {
+        color: #707070;
+        background-color: #fff !important;
+    }
+
+    & .ui-multiselect-filter-container .ui-inputtext:focus {
+        border: 2px solid #007bff;
+    }
+}
+
+body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container.ui-inputtext {
+    border: 1px solid #888888;
+}
+
+small.p-error, .p-error, .p-invalid {
+    color: #e60000;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+button.button-success, button.button-cancelar {
+    line-height: 2.25em;
+    height: 3em;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+    font-weight: 600;
+    border-radius: 30px !important;
+    font-size: 16px;
+    min-width: 130px;
+}
